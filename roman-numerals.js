@@ -40,3 +40,24 @@
 // Input: "MCMXCIV"
 // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+
+
+const romanToInt = (s) => {
+  let number = 0 
+  let revLetters = s.split('').reverse()
+  
+  for (let i = 0; i < s.length; i++) {
+    if (revLetters[i] === "I") {
+      
+    }
+  }
+
+
+  return revLetters
+
+}
+
+
+
+console.log(romanToInt("XIV"))
