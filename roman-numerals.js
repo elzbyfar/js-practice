@@ -1,3 +1,5 @@
+// DONE
+
 // 13. Roman to Integer
 // Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
@@ -41,23 +43,30 @@
 // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
-
-
 const romanToInt = (s) => {
   let number = 0 
-  let revLetters = s.split('').reverse()
-  
+  let dictionary = {
+    "I": 1, 
+    "V": 5, 
+    "X": 10, 
+    "L": 50, 
+    "C": 100, 
+    "D": 500, 
+    "M": 1000
+  }
+
   for (let i = 0; i < s.length; i++) {
-    if (revLetters[i] === "I") {
-      
+    if (dictionary[s[i]] < dictionary[s[i+1]]) {
+      number -= dictionary[s[i]]
+    } else {
+      number += dictionary[s[i]]
     }
   }
 
-
-  return revLetters
+  return number
 
 }
 
 
 
-console.log(romanToInt("XIV"))
+console.log(romanToInt("LVIII"))
