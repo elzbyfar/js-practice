@@ -1,13 +1,4 @@
 // 13. Roman to Integer
-// Easy
-
-// 2209
-
-// 3496
-
-// Add to List
-
-// Share
 // Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 // Symbol       Value

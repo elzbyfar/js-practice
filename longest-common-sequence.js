@@ -1,13 +1,11 @@
-/*
-  1. Write a function that takes two strings, s1 and s2 and returns the longest common subsequence of s1 and s2
+  // 1. Write a function that takes two strings, s1 and s2 and returns the longest common subsequence of s1 and s2
 
-  EXAMPLES: 
-  "ABAZDC", "BACBAD" => "ABAD"
-  "AGGTAB", "GXTXAYB" => "GTAB"
-  "ABBA", "ABCABA" => "ABBA"
-  "aaaa", "aa" => "aa"
-  "", "..." => ""
-*/
+  // EXAMPLES: 
+  // "ABAZDC", "BACBAD" => "ABAD"
+  // "AGGTAB", "GXTXAYB" => "GTAB"
+  // "ABBA", "ABCABA" => "ABBA"
+  // "aaaa", "aa" => "aa"
+  // "", "..." => ""
 
 const longestCommonSequence = (s1, s2) => {
   let firstString = s1.split("")
