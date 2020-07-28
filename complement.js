@@ -30,24 +30,18 @@ const findComplement = (num) => {
   while (e >= 0) {
     if (n < 2**e) {
       e -= 1
-      bits.push(0)
+      bits.push(1)
     } else {
       n -= 2**e
-      bits.push(1)
+      bits.push(0)
       e -= 1
     }
   }
 
+  
   for (let i=0; i < bits.length; i++) {
-    if (bits[i] === 1) {
+    if (bits[i] === 0) {
       const complementBits = bits.splice(i, bits.length - i)
-      for (let j = 0; j < complementBits.length; j++) {
-        if (complementBits[j] === 0) {
-          complementBits[j] = 1
-        } else {
-          complementBits[j] = 0
-        }
-      }
       if (!complementBits.includes(1)) {
         return 0
       }
@@ -67,5 +61,3 @@ const findComplement = (num) => {
   }
 
 }
-
-console.log(findComplement(5))
