@@ -26,18 +26,16 @@
 const findComplement = (num) => {
   const bits = []
   let e = 31
-  let n = num
   while (e >= 0) {
-    if (n < 2**e) {
+    if (num < 2**e) {
       e -= 1
       bits.push(1)
     } else {
-      n -= 2**e
+      num -= 2**e
       bits.push(0)
       e -= 1
     }
   }
-
   
   for (let i=0; i < bits.length; i++) {
     if (bits[i] === 0) {
@@ -61,3 +59,5 @@ const findComplement = (num) => {
   }
 
 }
+
+console.log(findComplement(5))
