@@ -21,8 +21,6 @@
 // You could assume no leading zero bit in the integer’s binary representation.
 // This question is the same as 1009: https://leetcode.com/problems/complement-of-base-10-integer/
 
-
-
 const findComplement = (num) => {
   const bits = []
   let e = 31
@@ -57,7 +55,6 @@ const findComplement = (num) => {
       }
     }
   }
-
 }
 
 console.log(findComplement(5))
