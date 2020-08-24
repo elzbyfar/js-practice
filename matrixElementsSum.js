@@ -6,8 +6,8 @@
 
 // For
 
-// matrix = [[0, 1, 1, 2], 
-//           [0, 5, 0, 0], 
+// matrix = [[0, 1, 1, 2],
+//           [0, 5, 0, 0],
 //           [2, 0, 3, 3]]
 // the output should be
 // matrixElementsSum(matrix) = 9.
@@ -18,8 +18,8 @@
 
 // For
 
-// matrix = [[1, 1, 1, 0], 
-//           [0, 5, 0, 1], 
+// matrix = [[1, 1, 1, 0],
+//           [0, 5, 0, 1],
 //           [2, 1, 3, 10]]
 // the output should be
 // matrixElementsSum(matrix) = 9.
@@ -45,50 +45,39 @@
 
 // The total price of all the rooms that are suitable for the CodeBots to live in.
 
-let matrix = [[0, 1, 1, 2], 
-              [0, 5, 0, 0], 
-              [2, 0, 3, 3]]
-
-
+let matrix = [ [ 0, 1, 1, 2 ], [ 0, 5, 0, 0 ], [ 2, 0, 3, 3 ] ];
 
 const matrixElementsSum = (matrix) => {
-  let safeIndexes = {}
-  let unsafeIndexes = {}
+	let safeIndexes = {};
+	let unsafeIndexes = {};
 
-  for (let i=0; i<matrix.length; i++) {
-    for (let j=0; j<matrix[i].length; j++) {
+	for (let i = 0; i < matrix.length; i++) {
+		for (let j = 0; j < matrix[i].length; j++) {
+			console.log(i, j, unsafeIndexes[i]);
+			// if (Object.keys(unsafeIndexes).includes(i)) {
+			//   matrix[i].map(n => {
+			//     return n * 2
+			//   })
+			// }
+			if (matrix[i][j] === 0) {
+				if (unsafeIndexes[i]) {
+					unsafeIndexes[i] = [ ...unsafeIndexes[i], j ];
+				} else {
+					unsafeIndexes[i] = [ j ];
+				}
+			} else {
+				if (safeIndexes[i]) {
+					safeIndexes[i] = [ ...safeIndexes[i], j ];
+				} else {
+					safeIndexes[i] = [ j ];
+				}
+			}
+		}
+	}
 
-      console.log(i, j, unsafeIndexes[i])
-      // if (Object.keys(unsafeIndexes).includes(i)) {
-      //   matrix[i].map(n => {
-      //     return n * 2
-      //   })
-      // }
+	return matrix;
+	return [ unsafeIndexes, safeIndexes ];
+	return safeIndexes.reduce((acc, nxt) => acc + nxt, 0);
+};
 
-
-
-      if (matrix[i][j] === 0) {
-        if (unsafeIndexes[i]) {
-          unsafeIndexes[i] = [...unsafeIndexes[i], j]
-        } else {
-          unsafeIndexes[i] = [j]
-        }
-      } else {
-        if (safeIndexes[i]) {
-          safeIndexes[i] = [...safeIndexes[i], j]
-        } else {
-          safeIndexes[i] = [j]
-        }
-      }
-      
-    }
-      
-  }
-
-  return matrix
-  return [unsafeIndexes, safeIndexes]
-  return safeIndexes.reduce((acc,nxt) => acc + nxt, 0)
-
-}
-
-console.log(matrixElementsSum(matrix))
+console.log(matrixElementsSum(matrix));
