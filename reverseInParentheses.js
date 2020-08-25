@@ -17,6 +17,8 @@
 // let test = '(baz)';
 // let test = 'foo(bar(baz))blim';
 // let test = 'foo(bar(baz))blim';
+
+// Stack concept
 let test = 'foo(bar(baz))blim';
 
 function reverseInParentheses(inputString) {

@@ -70,7 +70,6 @@ function recurringTask(firstDate, k, daysOfTheWeek, n) {
 								dateArray[1] = parseInt(dateArray[1]) + 1;
 							}
 						}
-						// dateArray[0] = '0' + (parseInt(dateArray[0]) + k * 7 - months[parseInt(dateArray[1]) - 1]);
 						console.log(daysOfTheWeekIndexes);
 						if (parseInt(dateArray[0]) > 10) {
 							dateArray[0] =
