@@ -14,18 +14,17 @@
 // Output: true
 // Example 4:
 
-// Input: 
-let A = "aaaaaaabc"
-let B = "aaaaaaacb"
+// Input:
+let A = "aaaaaaabc";
+let B = "aaaaaaacb";
 
-A = 'abab'
-B = 'abab'
+A = "abab";
+B = "abab";
 // Output: true
 // Example 5:
 
 // Input: A = "", B = "aa"
 // Output: false
- 
 
 // Constraints:
 
@@ -34,67 +33,40 @@ B = 'abab'
 // A and B consist only of lowercase letters.
 
 const buddyStrings = (A, B) => {
-    
-  if (A.length !== B.length) return false
-  if (A.length === 0) return false
+  if (A.length !== B.length) return false;
+  if (A.length === 0) return false;
 
-  let sameLetter = {}
-  let diffLetter = {}
-  let matching = {}
+  let sameLetter = {};
+  let diffLetter = {};
+  let matching = {};
 
-  for (let i=0; i<A.length; i++) {
+  for (let i = 0; i < A.length; i++) {
     if (matching[A[i]]) {
-      matching[A[i]] += 1
+      matching[A[i]] += 1;
     } else {
-      matching[A[i]] = 1
+      matching[A[i]] = 1;
     }
     if (matching[B[i]]) {
-      matching[B[i]] += 1
+      matching[B[i]] += 1;
     } else {
-      matching[B[i]] = 1
+      matching[B[i]] = 1;
     }
 
-    if (A[i] === B[i]){
+    if (A[i] === B[i]) {
       if (sameLetter[A[i]]) {
-        sameLetter[A[i]] += 1
+        sameLetter[A[i]] += 1;
       } else {
-        sameLetter[A[i]] = 1
+        sameLetter[A[i]] = 1;
       }
     } else {
       if (diffLetter[A[i]]) {
-        diffLetter[A[i]] += 1
+        diffLetter[A[i]] += 1;
       } else {
-        diffLetter[A[i]] = 1
+        diffLetter[A[i]] = 1;
       }
     }
-
   }
-  return sameLetter
-  
-  // if (A.length === 2 && Object.keys(matching).length === 2 && Object.keys(diffLetter).length === 0) {
-  //   console.log('line 78')
-  //   return false
-  // }
-  
-  // if (Object.keys(matching).length === Object.keys(sameLetter).length && Object.keys(diffLetter).length === 0) {
-  //   console.log('line84')
-  //   return true
-  // }
-  // if (A.length === 2 && Object.keys(diffLetter).length === 0) {
-  //   return true
-  // }
-  
-  // if (Object.values(matching).filter(val => val % 2 === 1).length !== 0) {
-  //   console.log('line 83')
-  //   return false
-  // }
-  
-  // if (A.length === 2 && Object.keys(sameLetter).length === 0 && A[0] === A[1]) {
-  //   console.log('line 88')
-  //   return false
-  // } 
-  // return Object.keys(diffLetter).length === 2
+  return sameLetter;
 };
 
-
-console.log(buddyStrings(A,B))
+console.log(buddyStrings(A, B));
